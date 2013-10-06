@@ -1,0 +1,139 @@
+/* 
+    Document   : style
+    Created on : Oct 6, 2013, 1:14:58 PM
+    Author     : Sam Reaves
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-family: 'Roboto Slab', serif;
+    color: #FFF;
+}
+body {
+    background: #867979;
+}
+
+a, img {
+    border: 0;
+}
+
+#game {
+    margin: 0 auto;
+    padding: 0;
+    width: 613px;
+    height: 700px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+#header {
+    height: 50px;
+    width: 613px;
+    margin: 0 auto;
+    text-align: center;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#messages {
+    width: 613px;
+    height: 50px;
+    text-align: center;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+#drop_space {
+    width: 613px;
+    height: 75px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+#game_board {
+    width: 613px;
+    height: 513px;    
+    cursor: pointer;
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    padding: 16px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background: #17DE92;
+
+}
+
+.col {
+    display: inline-block;
+    width: auto;
+    height: 498px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+#col1 {
+
+}
+
+#col2 {
+
+}
+
+#col3 {
+
+}
+
+#col4 {
+
+}
+
+#col5 {
+
+}
+
+#col6 {
+
+}
+
+#col7 {
+
+}
+
+.space {
+    width: 75px;
+    height: 75px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    display: block;
+    background: #FFF;
+    padding: 0;
+    margin: 4px 2px 4px 2px;
+}
+
