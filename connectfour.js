@@ -55,37 +55,16 @@ function dropToken(token, space) {
 
 var gameboard = [42];
 var gamecount = 1;
-function defineColumn(tokenPosition) {
-    if (tokenPosition >= 431 && tokenPosition < 514) {
-        return 1;
-    }
-    if (tokenPosition >= 514 && tokenPosition < 597) {
-        return 2;
-    }
-    if (tokenPosition >= 597 && tokenPosition < 680) {
-        return 3;
-    }
-    if (tokenPosition >= 680 && tokenPosition < 763) {
-        return 4;
-    }
-    if (tokenPosition >= 763 && tokenPosition < 846) {
-        return 5;
-    }
-    if (tokenPosition >= 846 && tokenPosition < 929) {
-        return 6;
-    }
-    if (tokenPosition >= 929) {
-        return 7;
-    }
-}
-function addPiece(token, column, player) {
+
+function addPiece(token, player, currentMousePos) {
     if (player === true) {
         player = 8;
     }
     else {
         player = 9;
     }
-    if (column === 1) {
+    if (currentMousePos < 514) {
+        $(token).css("left", "431");
         if (gameboard[6] === undefined) {
             gameboard[6] = player;
             dropToken(token, 6);
@@ -111,8 +90,9 @@ function addPiece(token, column, player) {
             dropToken(token, 1);
         }
     }
-    else if (column === 2) {
-         if (gameboard[12] === undefined) {
+    else if (currentMousePos >= 514 && currentMousePos < 597) {
+        $(token).css("left", "514");
+        if (gameboard[12] === undefined) {
             gameboard[12] = player;
             dropToken(token, 6);
         }
@@ -135,10 +115,11 @@ function addPiece(token, column, player) {
         else if (gameboard[7] === undefined) {
             gameboard[7] = player;
             dropToken(token, 1);
-        }       
+        }
     }
-    else if (column === 3) {
-          if (gameboard[18] === undefined) {
+    else if (currentMousePos >= 597 && currentMousePos < 680) {
+                $(token).css("left", "597");
+        if (gameboard[18] === undefined) {
             gameboard[18] = player;
             dropToken(token, 6);
         }
@@ -161,10 +142,11 @@ function addPiece(token, column, player) {
         else if (gameboard[13] === undefined) {
             gameboard[13] = player;
             dropToken(token, 1);
-        }           
+        }
     }
-    else if (column === 4) {
-         if (gameboard[23] === undefined) {
+    else if (currentMousePos >= 680 && currentMousePos < 763) {
+        $(token).css("left", "680");
+        if (gameboard[23] === undefined) {
             gameboard[23] = player;
             dropToken(token, 6);
         }
@@ -187,10 +169,11 @@ function addPiece(token, column, player) {
         else if (gameboard[19] === undefined) {
             gameboard[19] = player;
             dropToken(token, 1);
-        }            
+        }
     }
-    else if (column === 5) {
-          if (gameboard[30] === undefined) {
+    else if (currentMousePos >= 763 && currentMousePos < 846) {
+        $(token).css("left", "763");
+        if (gameboard[30] === undefined) {
             gameboard[30] = player;
             dropToken(token, 6);
         }
@@ -213,10 +196,11 @@ function addPiece(token, column, player) {
         else if (gameboard[25] === undefined) {
             gameboard[25] = player;
             dropToken(token, 1);
-        }           
+        }
     }
-    else if (column === 6) {
-         if (gameboard[36] === undefined) {
+    else if (currentMousePos >= 846 && currentMousePos < 929) {
+        $(token).css("left", "846");
+        if (gameboard[36] === undefined) {
             gameboard[36] = player;
             dropToken(token, 6);
         }
@@ -239,10 +223,11 @@ function addPiece(token, column, player) {
         else if (gameboard[31] === undefined) {
             gameboard[31] = player;
             dropToken(token, 1);
-        }            
+        }
     }
-    else if (column === 7) {
-         if (gameboard[42] === undefined) {
+    else if (currentMousePos >= 929) {
+        $(token).css("left", "929");
+        if (gameboard[42] === undefined) {
             gameboard[42] = player;
             dropToken(token, 6);
         }
@@ -265,7 +250,7 @@ function addPiece(token, column, player) {
         else if (gameboard[37] === undefined) {
             gameboard[37] = player;
             dropToken(token, 1);
-        }            
+        }
     }
     gamecount++;
     if (gamecount % 2 === 1) {
@@ -281,20 +266,13 @@ function addPiece(token, column, player) {
 
 
 $(document).ready(function() {
-    $("#drop_space").on('click', '.token', function(e) {
-        var element = document.getElementsByClassName("currenttoken")[0];
-        var column = element.getBoundingClientRect();
-        addPiece(this, defineColumn(column.left), $(".currenttoken").hasClass("player1"));
-    });
     var currentMousePos;
     $("div").mousemove(function(e) {
-        currentMousePos = e.pageX - $('#drop_space').offset().left - 38;
-        $(".currenttoken").css("left", currentMousePos);
+        // currentMousePos = e.pageX - $('#drop_space').offset().left - 38;   
+        currentMousePos = e.pageX;
     });
-
-//    var currentMousePos = {x: -1, y: -1};
-//    $(document).mousemove(function(event) {
-//        currentMousePos.x = event.pageX;
-//        currentMousePos.y = event.pageY;
-//    });
+    $("#drop_space").on('click', '.token', function(e) {
+        addPiece(this, $(".currenttoken").hasClass("player1"), currentMousePos);
+    });
 });
+
