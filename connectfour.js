@@ -85,15 +85,16 @@ function addPiece(token) {
         dropToken(token, 1);
         gamecount++;
     }
-    $("#drop_space").append("<div class=\"token player1\" id=\"token"+gamecount+"\"></div>");
+    $("#drop_space").append("<div class=\"token player1\" id=\"token" + gamecount + "\"></div>");
 }
 
 
 
 $(document).ready(function() {
-    $(".token").click(function() {
+    $("#drop_space").on('click', '.token', function(e) {
         addPiece(this);
     });
+
 //    var currentMousePos = {x: -1, y: -1};
 //    $(document).mousemove(function(event) {
 //        currentMousePos.x = event.pageX;
