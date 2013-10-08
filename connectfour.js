@@ -88,9 +88,11 @@ function addPiece(token) {
     }
     if (gamecount % 2 === 1) {
         $("#drop_space").append("<div class=\"token player1 currenttoken\" id=\"token" + gamecount + "\"></div>");
+        $("#messages").text("Player 1: Drop your piece below!");
     }
     else {
         $("#drop_space").append("<div class=\"token player2 currenttoken\" id=\"token" + gamecount + "\"></div>");
+        $("#messages").text("Player 2: Drop your piece below!");
     }
 }
 
@@ -99,6 +101,10 @@ function addPiece(token) {
 $(document).ready(function() {
     $("#drop_space").on('click', '.token', function(e) {
         addPiece(this);
+    });
+    $("div").mousemove(function(e) {
+        var currentMousePos = e.pageX - $('#drop_space').offset().left - 38;
+        $(".currenttoken").css("left", currentMousePos);
     });
 
 //    var currentMousePos = {x: -1, y: -1};

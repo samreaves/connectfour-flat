@@ -76,7 +76,6 @@ a, img {
 #game_board {
     width: 613px;
     height: 508px;    
-    cursor: pointer;
     border-radius: 16px;
     -webkit-border-radius: 16px;
     -moz-border-radius: 16px;
@@ -117,7 +116,6 @@ a, img {
 .token {
     width: 75px; 
     height: 75px;
-    position: relative;
     /*left: 16px;*/
     border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -137,4 +135,3 @@ a, img {
     /*left: 101px;*/
     left: 18px;
 }
-
