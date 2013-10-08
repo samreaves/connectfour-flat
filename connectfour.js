@@ -50,6 +50,7 @@ function dropToken(token, space) {
             top: "100"
         }, 500);
     }
+    $(".currenttoken").removeClass("currenttoken");
 }
 
 var gameboard = [42];
@@ -86,10 +87,10 @@ function addPiece(token) {
         gamecount++;
     }
     if (gamecount % 2 === 1) {
-        $("#drop_space").append("<div class=\"token player1\" id=\"token" + gamecount + "\"></div>");
+        $("#drop_space").append("<div class=\"token player1 currenttoken\" id=\"token" + gamecount + "\"></div>");
     }
     else {
-        $("#drop_space").append("<div class=\"token player2\" id=\"token" + gamecount + "\"></div>");
+        $("#drop_space").append("<div class=\"token player2 currenttoken\" id=\"token" + gamecount + "\"></div>");
     }
 }
 
