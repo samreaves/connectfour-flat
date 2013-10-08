@@ -56,15 +56,14 @@ function dropToken(token, space) {
 var gameboard = [42];
 var gamecount = 1;
 
-function addPiece(token, player, currentMousePos) {
+function addPiece(token, player, currentColumn) {
     if (player === true) {
         player = 8;
     }
     else {
         player = 9;
     }
-    if (currentMousePos < 514) {
-        $(token).css("left", "431");
+    if (currentColumn === 1) {
         if (gameboard[6] === undefined) {
             gameboard[6] = player;
             dropToken(token, 6);
@@ -90,8 +89,7 @@ function addPiece(token, player, currentMousePos) {
             dropToken(token, 1);
         }
     }
-    else if (currentMousePos >= 514 && currentMousePos < 597) {
-        $(token).css("left", "514");
+    else if (currentColumn === 2) {
         if (gameboard[12] === undefined) {
             gameboard[12] = player;
             dropToken(token, 6);
@@ -117,8 +115,7 @@ function addPiece(token, player, currentMousePos) {
             dropToken(token, 1);
         }
     }
-    else if (currentMousePos >= 597 && currentMousePos < 680) {
-                $(token).css("left", "597");
+    else if (currentColumn === 3) {
         if (gameboard[18] === undefined) {
             gameboard[18] = player;
             dropToken(token, 6);
@@ -144,8 +141,7 @@ function addPiece(token, player, currentMousePos) {
             dropToken(token, 1);
         }
     }
-    else if (currentMousePos >= 680 && currentMousePos < 763) {
-        $(token).css("left", "680");
+    else if (currentColumn === 4) {
         if (gameboard[23] === undefined) {
             gameboard[23] = player;
             dropToken(token, 6);
@@ -171,8 +167,7 @@ function addPiece(token, player, currentMousePos) {
             dropToken(token, 1);
         }
     }
-    else if (currentMousePos >= 763 && currentMousePos < 846) {
-        $(token).css("left", "763");
+    else if (currentColumn === 5) {
         if (gameboard[30] === undefined) {
             gameboard[30] = player;
             dropToken(token, 6);
@@ -198,8 +193,7 @@ function addPiece(token, player, currentMousePos) {
             dropToken(token, 1);
         }
     }
-    else if (currentMousePos >= 846 && currentMousePos < 929) {
-        $(token).css("left", "846");
+    else if (currentColumn === 6) {
         if (gameboard[36] === undefined) {
             gameboard[36] = player;
             dropToken(token, 6);
@@ -225,8 +219,7 @@ function addPiece(token, player, currentMousePos) {
             dropToken(token, 1);
         }
     }
-    else if (currentMousePos >= 929) {
-        $(token).css("left", "929");
+    else if (currentColumn === 7) {
         if (gameboard[42] === undefined) {
             gameboard[42] = player;
             dropToken(token, 6);
@@ -267,12 +260,47 @@ function addPiece(token, player, currentMousePos) {
 
 $(document).ready(function() {
     var currentMousePos;
+    var currentColumn;
     $("div").mousemove(function(e) {
-        // currentMousePos = e.pageX - $('#drop_space').offset().left - 38;   
-        currentMousePos = e.pageX;
+        currentMousePos = e.pageX - $('#drop_space').offset().left - 38;   
+        if (currentMousePos < 61) {
+            $(".currenttoken").css("left", "18px");
+            currentColumn = 1;
+            //alert(currentMousePos);
+        }
+        else if (currentMousePos >= 61 && currentMousePos < 144) {
+            $(".currenttoken").css("left", "102px");
+            currentColumn = 2;
+            //alert("Current column is " + currentColumn + " and token should be there");
+        }
+        else if (currentMousePos >= 144 && currentMousePos < 227) {
+            $(".currenttoken").css("left", "184px");
+            currentColumn = 3;
+            //alert("Current column is " + currentColumn + " and token should be there");
+        }
+        else if (currentMousePos >= 227 && currentMousePos < 310) {
+            $(".currenttoken").css("left", "268px");
+            currentColumn = 4;
+            //alert("Current column is " + currentColumn + " and token should be there");
+        }
+        else if (currentMousePos >= 310 && currentMousePos < 393) {
+            $(".currenttoken").css("left", "350px");
+            currentColumn = 5;
+            //alert("Current column is " + currentColumn + " and token should be there");
+        }
+        else if (currentMousePos >= 393 && currentMousePos < 476) {
+            $(".currenttoken").css("left", "433px");
+            currentColumn = 6;
+            //alert("Current column is " + currentColumn + " and token should be there");
+        }
+        else if (currentMousePos >= 476) {
+            $(".currenttoken").css("left", "516px");
+            currentColumn = 7;
+            //alert("Current column is " + currentColumn + " and token should be there");
+        }
     });
     $("#drop_space").on('click', '.token', function(e) {
-        addPiece(this, $(".currenttoken").hasClass("player1"), currentMousePos);
+        addPiece(this, $(".currenttoken").hasClass("player1"), currentColumn);
     });
 });
 

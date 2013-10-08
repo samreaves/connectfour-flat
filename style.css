@@ -116,7 +116,7 @@ a, img {
 .token {
     width: 75px; 
     height: 75px;
-    /*left: 16px;*/
+    left: 18px;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -127,11 +127,11 @@ a, img {
 
 .player1 {
     background: /*#FFED1A*/#ff6e6e;
-    left: 18px;
+    /*left: 18px;*/
 }
 
 .player2 {
     background: /*#7B27DE*//*#44b5ef*/#fff06e;
     /*left: 101px;*/
-    left: 18px;
+    /*left: 18px;*/
 }
