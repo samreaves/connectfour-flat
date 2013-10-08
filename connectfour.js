@@ -85,7 +85,12 @@ function addPiece(token) {
         dropToken(token, 1);
         gamecount++;
     }
-    $("#drop_space").append("<div class=\"token player1\" id=\"token" + gamecount + "\"></div>");
+    if (gamecount % 2 === 1) {
+        $("#drop_space").append("<div class=\"token player1\" id=\"token" + gamecount + "\"></div>");
+    }
+    else {
+        $("#drop_space").append("<div class=\"token player2\" id=\"token" + gamecount + "\"></div>");
+    }
 }
 
 
