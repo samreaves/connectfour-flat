@@ -69,7 +69,6 @@ a, img {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    cursor: pointer;
     position: relative;
 
 }
@@ -85,7 +84,7 @@ a, img {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    background: /*#17DE92*//*#97e365*/#fff06e;
+    background: /*#17DE92*//*#97e365*//*#fff06e*/#44b5ef;
     z-index: 3;
     position: relative;
 }
@@ -125,6 +124,7 @@ a, img {
     -moz-border-radius: 50%;
     position: absolute;
     z-index: 99;
+    cursor: pointer;
 }
 
 .player1 {
@@ -133,7 +133,7 @@ a, img {
 }
 
 .player2 {
-    background: /*#7B27DE*/#44b5ef;
+    background: /*#7B27DE*//*#44b5ef*/#fff06e;
     left: 101px;
 }
 
