@@ -40,6 +40,7 @@ a, img {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
+    position: relative;
 }
 
 #header {
@@ -64,15 +65,18 @@ a, img {
 
 #drop_space {
     width: 613px;
-    height: 75px;
+    height: 80px;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+
 }
 
 #game_board {
     width: 613px;
-    height: 513px;    
+    height: 508px;    
     cursor: pointer;
     border-radius: 16px;
     -webkit-border-radius: 16px;
@@ -81,8 +85,9 @@ a, img {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    background: #17DE92;
-
+    background: /*#17DE92*/#97e365;
+    z-index: 3;
+    position: relative;
 }
 
 .col {
@@ -92,6 +97,7 @@ a, img {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
+    z-index: 1;
 }
 
 #col1 {
@@ -135,5 +141,26 @@ a, img {
     background: #FFF;
     padding: 0;
     margin: 4px 2px 4px 2px;
+}
+
+.token {
+    width: 75px; 
+    height: 75px;
+    position: relative;
+    /*left: 16px;*/
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    position: absolute;
+}
+
+.player1 {
+    background: /*#FFED1A*/#ff6e6e;
+    left: 16px;
+}
+
+.player2 {
+    background: /*#7B27DE*/#44b5ef;
+    left: 100px;
 }
 
