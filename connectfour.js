@@ -53,14 +53,48 @@ function dropToken(token, space) {
     $(".currenttoken").removeClass("currenttoken");
 }
 
-var gameboard = [42];
+var gameboard = [[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0]];
 var gamecount = 1;
+
+
+function checkForHorizontalWin(player) {
+    
+}
+
+function checkForVerticalWin(player) {
+    
+}
+
+function checkForUpwardDiagonalWin(player) {
+    
+}
+
+function checkForDownwardDiagonalWin(player) {
+    
+}
+
+function checkForWin(player) {
+    if (checkForHorizontalWin(player) === true) {
+        return true;
+    }
+    if (checkForVerticalWin(player) === true) {
+        return true;
+    }
+    if (checkForUpwardDiagonalWin(player) === true) {
+        return true;
+    }
+    if (checkForDownwardDiagonalWin(player) === true) {
+        return true;
+    }
+}
 
 function addPiece(token, player, currentColumn) {
     if (player === true) {
+        // 8 = player1
         player = 8;
     }
     else {
+        // 9 = player2
         player = 9;
     }
     if (currentColumn === 1) {
@@ -269,7 +303,7 @@ $(document).ready(function() {
             //alert(currentMousePos);
         }
         else if (currentMousePos >= 61 && currentMousePos < 144) {
-            $(".currenttoken").css("left", "102px");
+            $(".currenttoken").css("left", "101px");
             currentColumn = 2;
             //alert("Current column is " + currentColumn + " and token should be there");
         }
@@ -279,7 +313,7 @@ $(document).ready(function() {
             //alert("Current column is " + currentColumn + " and token should be there");
         }
         else if (currentMousePos >= 227 && currentMousePos < 310) {
-            $(".currenttoken").css("left", "268px");
+            $(".currenttoken").css("left", "267px");
             currentColumn = 4;
             //alert("Current column is " + currentColumn + " and token should be there");
         }
