@@ -1,23 +1,8 @@
 /* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * ConnectFour Flat
+ * Written by Sam Reaves
+ * October 2013
  */
-
-
-/* Board coords
- * 0     = intentionally left empty
- * 1-6   = col1 
- * 7-12  = col2
- * 13-18 = col3
- * 19-24 = col4
- * 25-30 = col5
- * 31-36 = col6
- * 37-42 = col7
- *
- * 8 = player1
- * 9 = player2
- *  **/
-
 
 function dropToken(token, space) {
     if (space % 6 === 0) {
@@ -58,11 +43,24 @@ var gamecount = 1;
 
 
 function checkForHorizontalWin(player) {
-
+    
 }
 
 function checkForVerticalWin(player) {
-
+    var consecutiveTokens = 0;
+    for (var columns = 0; columns < 6; columns++) {
+       for (var spaces = 0; spaces < 5; spaces++) {
+           if (gameboard[columns][spaces] === player) {
+               consecutiveTokens++;
+               if (consecutiveTokens === 4) {
+                   return true;
+               }
+               
+           } else {
+               consecutiveTokens = 0;
+           }
+       }
+    }
 }
 
 function checkForUpwardDiagonalWin(player) {
@@ -86,6 +84,7 @@ function checkForWin(player) {
     if (checkForDownwardDiagonalWin(player) === true) {
         return true;
     }
+    return false;
 }
 
 function addPiece(token, player, currentColumn) {
