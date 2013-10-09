@@ -61,28 +61,53 @@ function checkForHorizontalWin(player) {
 }
 
 function checkForVerticalWin(player) {
-    var consecutiveTokens = 0;
-    for (var columns = 0; columns < 7; columns++) {
-        for (var spaces = 0; spaces < 6; spaces++) {
-            if (gameboard[columns][spaces] === player) {
-                consecutiveTokens++;
-                if (consecutiveTokens === 4) {
-                    return true;
-                }
-
-            } else {
-                consecutiveTokens = 0;
-            }
-        }
-    }
-    return false;
+//    var consecutiveTokens = 0;
+//    for (var columns = 0; columns < 7; columns++) {
+//        for (var spaces = 0; spaces < 6; spaces++) {
+//            if (gameboard[columns][spaces] === player) {
+//                consecutiveTokens++;
+//                if (consecutiveTokens === 4) {
+//                    return true;
+//                }
+//
+//            } else {
+//                consecutiveTokens = 0;
+//            }
+//        }
+//    }
+//    return false;
 }
 
 function checkForUpwardDiagonalWin(player) {
+//    var consecutiveTokens = 0;
+//    var columns;
+//    var spaces;
+//    for (var spacesStart = 5; spacesStart > 2; spacesStart--) {
+//        for (var columnsStart = 0; columnsStart < 4; columnsStart++) {
+//            if (columnsStart === 0) {
+//                for (columns = 0, spaces = 5; columns < 7, spaces >= 0; columns++, spaces--) {
+//                    if (gameboard[columns][spaces] === player) {
+//                        consecutiveTokens++;
+//                        if (consecutiveTokens === 4) {
+//                            return true;
+//                        }
+//
+//                    } else {
+//                        consecutiveTokens = 0;
+//                    }
+//                }
+//            }
+//            if (columnsStart === 1)
+//        }
+//    }
+//    return false;
+}
+
+function checkForDownwardDiagonalWin(player) {
     var consecutiveTokens = 0;
     var columns;
     var spaces;
-    for (columns = 0, spaces = 5; columns < 7, spaces >= 0; columns++, spaces--) {
+    for (columns = 0, spaces = 0; columns < 7, spaces < 6; columns++, spaces++) {
         if (gameboard[columns][spaces] === player) {
             consecutiveTokens++;
             if (consecutiveTokens === 4) {
@@ -94,10 +119,6 @@ function checkForUpwardDiagonalWin(player) {
         }
     }
     return false;
-}
-
-function checkForDownwardDiagonalWin(player) {
-
 }
 
 function checkForWin(player) {
@@ -315,15 +336,15 @@ function addPiece(token, player, currentColumn) {
         // Change Player Number
         if (gamecount % 2 === 1) {
             $("#drop_space").append("<div class=\"token player1 currenttoken\" id=\"token" + gamecount + "\"></div>");
-            $("#header").html("<h1>Player 1</h1>");
+            $("#header h1").text("Player 1");
         }
         else {
             $("#drop_space").append("<div class=\"token player2 currenttoken\" id=\"token" + gamecount + "\"></div>");
-            $("#header").html("<h1>Player 2</h1>");
+            $("#header h1").text("Player 2");
         }
     }
     else {
-        $("#header").html("<h1>Player " + player + " Wins!</h1>");
+        $("#header h1").text("Player " + player + " Wins!");
         $("#messages").text("Great game, guys.");
     }
 }
