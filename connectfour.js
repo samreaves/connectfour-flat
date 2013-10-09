@@ -79,7 +79,21 @@ function checkForVerticalWin(player) {
 }
 
 function checkForUpwardDiagonalWin(player) {
+    var consecutiveTokens = 0;
+    var columns;
+    var spaces;
+    for (columns = 0, spaces = 5; columns < 7, spaces >= 0; columns++, spaces--) {
+        if (gameboard[columns][spaces] === player) {
+            consecutiveTokens++;
+            if (consecutiveTokens === 4) {
+                return true;
+            }
 
+        } else {
+            consecutiveTokens = 0;
+        }
+    }
+    return false;
 }
 
 function checkForDownwardDiagonalWin(player) {
@@ -88,8 +102,6 @@ function checkForDownwardDiagonalWin(player) {
 
 function checkForWin(player) {
     if (checkForHorizontalWin(player)) {
-        $("#header").html("<h1>Player " + player + " Wins!</h1>");
-        $("#messages").text("Great game, guys.");
         return true;
     }
     if (checkForVerticalWin(player)) {
