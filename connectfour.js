@@ -43,24 +43,25 @@ var gamecount = 1;
 
 
 function checkForHorizontalWin(player) {
-    
+
 }
 
 function checkForVerticalWin(player) {
     var consecutiveTokens = 0;
-    for (var columns = 0; columns < 6; columns++) {
-       for (var spaces = 0; spaces < 5; spaces++) {
-           if (gameboard[columns][spaces] === player) {
-               consecutiveTokens++;
-               if (consecutiveTokens === 4) {
-                   return true;
-               }
-               
-           } else {
-               consecutiveTokens = 0;
-           }
-       }
+    for (var columns = 0; columns < 7; columns++) {
+        for (var spaces = 0; spaces < 6; spaces++) {
+            if (gameboard[columns][spaces] === player) {
+                consecutiveTokens++;
+                if (consecutiveTokens === 4) {
+                    return true;
+                }
+
+            } else {
+                consecutiveTokens = 0;
+            }
+        }
     }
+    return false;
 }
 
 function checkForUpwardDiagonalWin(player) {
@@ -72,16 +73,18 @@ function checkForDownwardDiagonalWin(player) {
 }
 
 function checkForWin(player) {
-    if (checkForHorizontalWin(player) === true) {
+    if (checkForHorizontalWin(player)) {
+        $("#header").html("<h1>Player " + player + " Wins!</h1>");
+        $("#messages").text("Great game, guys.");
         return true;
     }
-    if (checkForVerticalWin(player) === true) {
+    if (checkForVerticalWin(player)) {
         return true;
     }
-    if (checkForUpwardDiagonalWin(player) === true) {
+    if (checkForUpwardDiagonalWin(player)) {
         return true;
     }
-    if (checkForDownwardDiagonalWin(player) === true) {
+    if (checkForDownwardDiagonalWin(player)) {
         return true;
     }
     return false;
@@ -89,13 +92,15 @@ function checkForWin(player) {
 
 function addPiece(token, player, currentColumn) {
     if (player === true) {
-        // 8 = player1
-        player = 8;
+        // 1 = player1 
+        player = 1;
     }
     else {
-        // 9 = player2
-        player = 9;
+        // 2 = player2. 
+        player = 2;
     }
+
+    // Validation to see into which space token drops
     if (currentColumn === 1) {
         if (gameboard[0][5] === 0) {
             gameboard[0][5] = player;
@@ -278,14 +283,22 @@ function addPiece(token, player, currentColumn) {
             dropToken(token, 1);
         }
     }
-    gamecount++;
-    if (gamecount % 2 === 1) {
-        $("#drop_space").append("<div class=\"token player1 currenttoken\" id=\"token" + gamecount + "\"></div>");
-        $("#header").html("<h1>Player 1</h1>");
+    if (!checkForWin(player)) {
+        gamecount++;
+
+        // Change Player Number
+        if (gamecount % 2 === 1) {
+            $("#drop_space").append("<div class=\"token player1 currenttoken\" id=\"token" + gamecount + "\"></div>");
+            $("#header").html("<h1>Player 1</h1>");
+        }
+        else {
+            $("#drop_space").append("<div class=\"token player2 currenttoken\" id=\"token" + gamecount + "\"></div>");
+            $("#header").html("<h1>Player 2</h1>");
+        }
     }
     else {
-        $("#drop_space").append("<div class=\"token player2 currenttoken\" id=\"token" + gamecount + "\"></div>");
-        $("#header").html("<h1>Player 2</h1>");
+        $("#header").html("<h1>Player " + player + " Wins!</h1>");
+        $("#messages").text("Great game, guys.");
     }
 }
 
