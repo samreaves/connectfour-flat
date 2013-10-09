@@ -295,7 +295,7 @@ function addPiece(token, player, currentColumn) {
 $(document).ready(function() {
     var currentMousePos;
     var currentColumn;
-    $("div").mousemove(function(e) {
+    $("#drop_space").mousemove(function(e) {
         currentMousePos = e.pageX - $('#drop_space').offset().left - 38;
         if (currentMousePos < 61) {
             $(".currenttoken").css("left", "18px");
@@ -335,6 +335,27 @@ $(document).ready(function() {
     });
     $("#drop_space").on('click', '.token', function(e) {
         addPiece(this, $(".currenttoken").hasClass("player1"), currentColumn);
+    });
+    $("#change_background").on('click', '#background_change_white', function() {
+        $("body").css({
+            background: '#FFF',
+            color: '#000'
+        });
+        /*$(".space").css("background", "#FFF");*/
+    });
+    $("#change_background").on('click', '#background_change_black', function() {
+        $("body").css({
+            background: '#000',
+            color: '#FFF'
+        });
+        /*$(".space").css("background", "#000");*/
+    });
+    $("#change_background").on('click', '#background_change_green', function() {
+        $("body").css({
+            background: '#97e365',
+            color: '#FFF'
+        });
+        /* $(".space").css("background", "#97e365");*/
     });
 });
 
