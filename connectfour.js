@@ -65,7 +65,21 @@ function checkForVerticalWin(player) {
 }
 
 function checkForUpwardDiagonalWin(player) {
+    var consecutiveTokens = 0;
+    for (var spaces = 0; spaces < 6; spaces++) {
+        for (var columns = 0; columns < 7; columns++) {
+            if (gameboard[columns][spaces] === player) {
+                consecutiveTokens++;
+                if (consecutiveTokens === 4) {
+                    return true;
+                }
 
+            } else {
+                consecutiveTokens = 0;
+            }
+        }
+    }
+    return false;
 }
 
 function checkForDownwardDiagonalWin(player) {
