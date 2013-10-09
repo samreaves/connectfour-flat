@@ -282,11 +282,11 @@ function addPiece(token, player, currentColumn) {
     gamecount++;
     if (gamecount % 2 === 1) {
         $("#drop_space").append("<div class=\"token player1 currenttoken\" id=\"token" + gamecount + "\"></div>");
-        $("#messages").text("Player 1: Drop your piece below!");
+        $("#header").html("<h1>Player 1</h1>");
     }
     else {
         $("#drop_space").append("<div class=\"token player2 currenttoken\" id=\"token" + gamecount + "\"></div>");
-        $("#messages").text("Player 2: Drop your piece below!");
+        $("#header").html("<h1>Player 2</h1>");
     }
 }
 

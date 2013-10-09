@@ -22,10 +22,11 @@ html, body {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     font-family: 'Roboto Slab', serif;
+    /*font-family: 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif;*/
     color: #FFF;
 }
 body {
-    background: #867979;
+    background: /*#867979*/#97e365;
 }
 
 a, img {
@@ -52,6 +53,7 @@ a, img {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+    /*font-family: 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif;*/
 }
 
 #messages {
@@ -122,6 +124,7 @@ a, img {
     position: absolute;
     z-index: 99;
     cursor: pointer;
+    left: 18px;
 }
 
 .player1 {
