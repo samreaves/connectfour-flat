@@ -53,24 +53,24 @@ function dropToken(token, space) {
     $(".currenttoken").removeClass("currenttoken");
 }
 
-var gameboard = [[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0]];
+var gameboard = [[0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0]];
 var gamecount = 1;
 
 
 function checkForHorizontalWin(player) {
-    
+
 }
 
 function checkForVerticalWin(player) {
-    
+
 }
 
 function checkForUpwardDiagonalWin(player) {
-    
+
 }
 
 function checkForDownwardDiagonalWin(player) {
-    
+
 }
 
 function checkForWin(player) {
@@ -98,184 +98,184 @@ function addPiece(token, player, currentColumn) {
         player = 9;
     }
     if (currentColumn === 1) {
-        if (gameboard[6] === undefined) {
-            gameboard[6] = player;
+        if (gameboard[0][5] === 0) {
+            gameboard[0][5] = player;
             dropToken(token, 6);
         }
-        else if (gameboard[5] === undefined) {
-            gameboard[5] = player;
+        else if (gameboard[0][4] === 0) {
+            gameboard[0][4] = player;
             dropToken(token, 5);
         }
-        else if (gameboard[4] === undefined) {
-            gameboard[4] = player;
+        else if (gameboard[0][3] === 0) {
+            gameboard[0][3] = player;
             dropToken(token, 4);
         }
-        else if (gameboard[3] === undefined) {
-            gameboard[3] = player;
+        else if (gameboard[0][2] === 0) {
+            gameboard[0][2] = player;
             dropToken(token, 3);
         }
-        else if (gameboard[2] === undefined) {
-            gameboard[2] = player;
+        else if (gameboard[0][1] === 0) {
+            gameboard[0][1] = player;
             dropToken(token, 2);
         }
-        else if (gameboard[1] === undefined) {
-            gameboard[1] = player;
+        else if (gameboard[0][0] === 0) {
+            gameboard[0][0] = player;
             dropToken(token, 1);
         }
     }
     else if (currentColumn === 2) {
-        if (gameboard[12] === undefined) {
-            gameboard[12] = player;
+        if (gameboard[1][5] === 0) {
+            gameboard[1][5] = player;
             dropToken(token, 6);
         }
-        else if (gameboard[11] === undefined) {
-            gameboard[11] = player;
+        else if (gameboard[1][4] === 0) {
+            gameboard[1][4] = player;
             dropToken(token, 5);
         }
-        else if (gameboard[10] === undefined) {
-            gameboard[10] = player;
+        else if (gameboard[1][3] === 0) {
+            gameboard[1][3] = player;
             dropToken(token, 4);
         }
-        else if (gameboard[9] === undefined) {
-            gameboard[9] = player;
+        else if (gameboard[1][2] === 0) {
+            gameboard[1][2] = player;
             dropToken(token, 3);
         }
-        else if (gameboard[8] === undefined) {
-            gameboard[8] = player;
+        else if (gameboard[1][1] === 0) {
+            gameboard[1][1] = player;
             dropToken(token, 2);
         }
-        else if (gameboard[7] === undefined) {
-            gameboard[7] = player;
+        else if (gameboard[1][0] === 0) {
+            gameboard[1][0] = player;
             dropToken(token, 1);
         }
     }
     else if (currentColumn === 3) {
-        if (gameboard[18] === undefined) {
-            gameboard[18] = player;
+        if (gameboard[2][5] === 0) {
+            gameboard[2][5] = player;
             dropToken(token, 6);
         }
-        else if (gameboard[17] === undefined) {
-            gameboard[17] = player;
+        else if (gameboard[2][4] === 0) {
+            gameboard[2][4] = player;
             dropToken(token, 5);
         }
-        else if (gameboard[16] === undefined) {
-            gameboard[16] = player;
+        else if (gameboard[2][3] === 0) {
+            gameboard[2][3] = player;
             dropToken(token, 4);
         }
-        else if (gameboard[15] === undefined) {
-            gameboard[15] = player;
+        else if (gameboard[2][2] === 0) {
+            gameboard[2][2] = player;
             dropToken(token, 3);
         }
-        else if (gameboard[14] === undefined) {
-            gameboard[14] = player;
+        else if (gameboard[2][1] === 0) {
+            gameboard[2][1] = player;
             dropToken(token, 2);
         }
-        else if (gameboard[13] === undefined) {
-            gameboard[13] = player;
+        else if (gameboard[2][0] === 0) {
+            gameboard[2][0] = player;
             dropToken(token, 1);
         }
     }
     else if (currentColumn === 4) {
-        if (gameboard[23] === undefined) {
-            gameboard[23] = player;
+        if (gameboard[3][5] === 0) {
+            gameboard[3][5] = player;
             dropToken(token, 6);
         }
-        else if (gameboard[22] === undefined) {
-            gameboard[22] = player;
+        else if (gameboard[3][4] === 0) {
+            gameboard[3][4] = player;
             dropToken(token, 5);
         }
-        else if (gameboard[21] === undefined) {
-            gameboard[21] = player;
+        else if (gameboard[3][3] === 0) {
+            gameboard[3][3] = player;
             dropToken(token, 4);
         }
-        else if (gameboard[20] === undefined) {
-            gameboard[20] = player;
+        else if (gameboard[3][2] === 0) {
+            gameboard[3][2] = player;
             dropToken(token, 3);
         }
-        else if (gameboard[20] === undefined) {
-            gameboard[20] = player;
+        else if (gameboard[3][1] === 0) {
+            gameboard[3][1] = player;
             dropToken(token, 2);
         }
-        else if (gameboard[19] === undefined) {
-            gameboard[19] = player;
+        else if (gameboard[3][0] === 0) {
+            gameboard[3][0] = player;
             dropToken(token, 1);
         }
     }
     else if (currentColumn === 5) {
-        if (gameboard[30] === undefined) {
-            gameboard[30] = player;
+        if (gameboard[4][5] === 0) {
+            gameboard[4][5] = player;
             dropToken(token, 6);
         }
-        else if (gameboard[29] === undefined) {
-            gameboard[29] = player;
+        else if (gameboard[4][4] === 0) {
+            gameboard[4][4] = player;
             dropToken(token, 5);
         }
-        else if (gameboard[28] === undefined) {
-            gameboard[28] = player;
+        else if (gameboard[4][3] === 0) {
+            gameboard[4][3] = player;
             dropToken(token, 4);
         }
-        else if (gameboard[27] === undefined) {
-            gameboard[27] = player;
+        else if (gameboard[4][2] === 0) {
+            gameboard[4][2] = player;
             dropToken(token, 3);
         }
-        else if (gameboard[26] === undefined) {
-            gameboard[26] = player;
+        else if (gameboard[4][1] === 0) {
+            gameboard[4][1] = player;
             dropToken(token, 2);
         }
-        else if (gameboard[25] === undefined) {
-            gameboard[25] = player;
+        else if (gameboard[4][0] === 0) {
+            gameboard[4][0] = player;
             dropToken(token, 1);
         }
     }
     else if (currentColumn === 6) {
-        if (gameboard[36] === undefined) {
-            gameboard[36] = player;
+        if (gameboard[5][5] === 0) {
+            gameboard[5][5] = player;
             dropToken(token, 6);
         }
-        else if (gameboard[35] === undefined) {
-            gameboard[35] = player;
+        else if (gameboard[5][4] === 0) {
+            gameboard[5][4] = player;
             dropToken(token, 5);
         }
-        else if (gameboard[34] === undefined) {
-            gameboard[34] = player;
+        else if (gameboard[5][3] === 0) {
+            gameboard[5][3] = player;
             dropToken(token, 4);
         }
-        else if (gameboard[33] === undefined) {
-            gameboard[33] = player;
+        else if (gameboard[5][2] === 0) {
+            gameboard[5][2] = player;
             dropToken(token, 3);
         }
-        else if (gameboard[32] === undefined) {
-            gameboard[32] = player;
+        else if (gameboard[5][1] === 0) {
+            gameboard[5][1] = player;
             dropToken(token, 2);
         }
-        else if (gameboard[31] === undefined) {
-            gameboard[31] = player;
+        else if (gameboard[5][0] === 0) {
+            gameboard[5][0] = player;
             dropToken(token, 1);
         }
     }
     else if (currentColumn === 7) {
-        if (gameboard[42] === undefined) {
-            gameboard[42] = player;
+        if (gameboard[6][5] === 0) {
+            gameboard[6][5] = player;
             dropToken(token, 6);
         }
-        else if (gameboard[41] === undefined) {
-            gameboard[41] = player;
+        else if (gameboard[6][4] === 0) {
+            gameboard[6][4] = player;
             dropToken(token, 5);
         }
-        else if (gameboard[40] === undefined) {
-            gameboard[40] = player;
+        else if (gameboard[6][3] === 0) {
+            gameboard[6][3] = player;
             dropToken(token, 4);
         }
-        else if (gameboard[39] === undefined) {
-            gameboard[39] = player;
+        else if (gameboard[6][2] === 0) {
+            gameboard[6][2] = player;
             dropToken(token, 3);
         }
-        else if (gameboard[38] === undefined) {
-            gameboard[38] = player;
+        else if (gameboard[6][1] === 0) {
+            gameboard[6][1] = player;
             dropToken(token, 2);
         }
-        else if (gameboard[37] === undefined) {
-            gameboard[37] = player;
+        else if (gameboard[6][0] === 0) {
+            gameboard[6][0] = player;
             dropToken(token, 1);
         }
     }
@@ -296,7 +296,7 @@ $(document).ready(function() {
     var currentMousePos;
     var currentColumn;
     $("div").mousemove(function(e) {
-        currentMousePos = e.pageX - $('#drop_space').offset().left - 38;   
+        currentMousePos = e.pageX - $('#drop_space').offset().left - 38;
         if (currentMousePos < 61) {
             $(".currenttoken").css("left", "18px");
             currentColumn = 1;
