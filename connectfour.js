@@ -79,46 +79,176 @@ function checkForVerticalWin(player) {
 }
 
 function checkForUpwardDiagonalWin(player) {
-//    var consecutiveTokens = 0;
-//    var columns;
-//    var spaces;
-//    for (var spacesStart = 5; spacesStart > 2; spacesStart--) {
-//        for (var columnsStart = 0; columnsStart < 4; columnsStart++) {
-//            if (columnsStart === 0) {
-//                for (columns = 0, spaces = 5; columns < 7, spaces >= 0; columns++, spaces--) {
-//                    if (gameboard[columns][spaces] === player) {
-//                        consecutiveTokens++;
-//                        if (consecutiveTokens === 4) {
-//                            return true;
-//                        }
-//
-//                    } else {
-//                        consecutiveTokens = 0;
-//                    }
-//                }
-//            }
-//            if (columnsStart === 1)
-//        }
-//    }
-//    return false;
-}
-
-function checkForDownwardDiagonalWin(player) {
     var consecutiveTokens = 0;
     var columns;
     var spaces;
-    for (columns = 0, spaces = 0; columns < 7, spaces < 6; columns++, spaces++) {
-        if (gameboard[columns][spaces] === player) {
-            consecutiveTokens++;
-            if (consecutiveTokens === 4) {
-                return true;
+    for (var columnsStart = 0; columnsStart < 4; columnsStart++) {
+        for (var spacesStart = 5; spacesStart > 2; spacesStart--) {
+            if (columnsStart === 0 && spacesStart === 5) {
+                for (columns = 0, spaces = 5; columns < 6, spaces >= 0; columns++, spaces--) {
+                    if (gameboard[columns][spaces] === player) {
+                        consecutiveTokens++;
+                        if (consecutiveTokens === 4) {
+                            return true;
+                        }
+                    } else {
+                        consecutiveTokens = 0;
+                    }
+                }
             }
-
-        } else {
-            consecutiveTokens = 0;
+            if (columnsStart === 0 && spacesStart === 4) {
+                for (columns = 0, spaces = 4; columns < 5, spaces >= 0; columns++, spaces--) {
+                    if (gameboard[columns][spaces] === player) {
+                        consecutiveTokens++;
+                        if (consecutiveTokens === 4) {
+                            return true;
+                        }
+                    } else {
+                        consecutiveTokens = 0;
+                    }
+                }
+            }
+            if (columnsStart === 0 && spacesStart === 3) {
+                for (columns = 0, spaces = 3; columns < 4, spaces >= 0; columns++, spaces--) {
+                    if (gameboard[columns][spaces] === player) {
+                        consecutiveTokens++;
+                        if (consecutiveTokens === 4) {
+                            return true;
+                        }
+                    } else {
+                        consecutiveTokens = 0;
+                    }
+                }
+            }
+            if (columnsStart === 1 && spacesStart === 5) {
+                for (columns = 1, spaces = 5; columns < 7, spaces >= 0; columns++, spaces--) {
+                    if (gameboard[columns][spaces] === player) {
+                        consecutiveTokens++;
+                        if (consecutiveTokens === 4) {
+                            return true;
+                        }
+                    } else {
+                        consecutiveTokens = 0;
+                    }
+                }
+            }
+            if (columnsStart === 1 && spacesStart === 4) {
+                for (columns = 1, spaces = 4; columns < 6, spaces >= 0; columns++, spaces--) {
+                    if (gameboard[columns][spaces] === player) {
+                        consecutiveTokens++;
+                        if (consecutiveTokens === 4) {
+                            return true;
+                        }
+                    } else {
+                        consecutiveTokens = 0;
+                    }
+                }
+            }
+            if (columnsStart === 1 && spacesStart === 3) {
+                for (columns = 1, spaces = 3; columns < 5, spaces >= 0; columns++, spaces--) {
+                    if (gameboard[columns][spaces] === player) {
+                        consecutiveTokens++;
+                        if (consecutiveTokens === 4) {
+                            return true;
+                        }
+                    } else {
+                        consecutiveTokens = 0;
+                    }
+                }
+            }
+            if (columnsStart === 2 && spacesStart === 5) {
+                for (columns = 2, spaces = 5; columns < 6, spaces >= 1; columns++, spaces--) {
+                    if (gameboard[columns][spaces] === player) {
+                        consecutiveTokens++;
+                        if (consecutiveTokens === 4) {
+                            return true;
+                        }
+                    } else {
+                        consecutiveTokens = 0;
+                    }
+                }
+            }
+            if (columnsStart === 2 && spacesStart === 4) {
+                for (columns = 2, spaces = 4; columns < 5, spaces >= 0; columns++, spaces--) {
+                    if (gameboard[columns][spaces] === player) {
+                        consecutiveTokens++;
+                        if (consecutiveTokens === 4) {
+                            return true;
+                        }
+                    } else {
+                        consecutiveTokens = 0;
+                    }
+                }
+            }
+            if (columnsStart === 2 && spacesStart === 3) {
+                for (columns = 2, spaces = 3; columns < 4, spaces >= 0; columns++, spaces--) {
+                    if (gameboard[columns][spaces] === player) {
+                        consecutiveTokens++;
+                        if (consecutiveTokens === 4) {
+                            return true;
+                        }
+                    } else {
+                        consecutiveTokens = 0;
+                    }
+                }
+            }
+            if (columnsStart === 3 && spacesStart === 5) {
+                for (columns = 3, spaces = 5; columns < 7, spaces >= 2; columns++, spaces--) {
+                    if (gameboard[columns][spaces] === player) {
+                        consecutiveTokens++;
+                        if (consecutiveTokens === 4) {
+                            return true;
+                        }
+                    } else {
+                        consecutiveTokens = 0;
+                    }
+                }
+            }
+            if (columnsStart === 3 && spacesStart === 4) {
+                for (columns = 3, spaces = 4; columns < 7, spaces >= 1; columns++, spaces--) {
+                    if (gameboard[columns][spaces] === player) {
+                        consecutiveTokens++;
+                        if (consecutiveTokens === 4) {
+                            return true;
+                        }
+                    } else {
+                        consecutiveTokens = 0;
+                    }
+                }
+            }
+            if (columnsStart === 3 && spacesStart === 3) {
+                for (columns = 3, spaces = 3; columns < 7, spaces >= 0; columns++, spaces--) {
+                    if (gameboard[columns][spaces] === player) {
+                        consecutiveTokens++;
+                        if (consecutiveTokens === 4) {
+                            return true;
+                        }
+                    } else {
+                        consecutiveTokens = 0;
+                    }
+                }
+            }
         }
     }
     return false;
+}
+
+function checkForDownwardDiagonalWin(player) {
+//    var consecutiveTokens = 0;
+//    var columns;
+//    var spaces;
+//    for (columns = 0, spaces = 0; columns < 7, spaces < 6; columns++, spaces++) {
+//        if (gameboard[columns][spaces] === player) {
+//            consecutiveTokens++;
+//            if (consecutiveTokens === 4) {
+//                return true;
+//            }
+//
+//        } else {
+//            consecutiveTokens = 0;
+//        }
+//    }
+//    return false;
 }
 
 function checkForWin(player) {
