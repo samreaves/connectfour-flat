@@ -134,6 +134,18 @@ h1 {
     left: 18px;
 }
 
+.playedToken {
+    width: 75px; 
+    height: 75px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    position: absolute;
+    z-index: 99;
+    cursor: pointer;
+    left: 18px;   
+}
+
 .player1 {
     background: /*#FFED1A*/#ff6e6e;
     /*left: 18px;*/

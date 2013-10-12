@@ -36,6 +36,8 @@ function dropToken(token, space) {
         }, 500);
     }
     $(".currenttoken").removeClass("currenttoken");
+    $(token).removeClass("token");
+    $(token).addClass("playedToken");
 }
 
 var gameboard = [[0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0]];
