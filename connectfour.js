@@ -430,6 +430,13 @@ function checkForWin(player) {
     return false;
 }
 
+function checkForFull() {
+    if (gameboard === [[1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1]]) {
+        return true;
+    }
+    return false;
+}
+
 function addPiece(token, player, currentColumn) {
     if (player === true) {
         // 1 = player1 
@@ -623,7 +630,7 @@ function addPiece(token, player, currentColumn) {
             dropToken(token, 1);
         }
     }
-    if (!checkForWin(player)) {
+    if (!checkForWin(player) && !checkForFull()) {
         gamecount++;
 
         // Change Player Number
@@ -636,9 +643,15 @@ function addPiece(token, player, currentColumn) {
             $("#header h1").text("Player 2");
         }
     }
-    else {
+    else if (checkForWin(player)) {
         $("#header h1").text("Player " + player + " Wins!");
         $("#messages").text("Great game, guys.");
+    }
+    else if (checkForFull() && !checkForWin(player)) {
+        $("header h1").text("It's a Tie!");
+        $("#messages").text("Great game, guys.");
+        $("#drop_space").css("padding", "20px 0 0 0");
+        $("#drop_space").append("<div class=\"playAgain\">Click to Play Again</div>");
     }
 }
 
@@ -708,6 +721,19 @@ $(document).ready(function() {
             color: '#FFF'
         });
         /* $(".space").css("background", "#97e365");*/
+    });
+    $("#drop_space").on('click', '.playAgain', function() {
+        // Remove tokens, playAgain, Tie
+        $(".playedToken").remove();
+        $(".playAgain").remove();
+
+        // Reset the board
+        gameboard = [[0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0]];
+        gamecount = 1;
+        $("#drop_space").css("padding", "0");
+        $("#drop_space").append("<div class=\"token player1 currenttoken\" id=\"token" + gamecount + "\"></div>");
+        $("#header h1").text("Player 1");
+        $("#messages").text("Tap your token to make your play.");
     });
 });
 
