@@ -650,6 +650,8 @@ function addPiece(token, player, currentColumn) {
     else if (checkForWin(player)) {
         $("#header h1").text("Player " + player + " Wins!");
         $("#messages").text("Great game, guys.");
+        $("#drop_space").css("padding", "20px 0 0 0");
+        $("#drop_space").append("<div class=\"playAgain\">Click to Play Again</div>");
     }
     else if (checkForFull() && !checkForWin(player)) {
         $("header h1").text("It's a Tie!");
