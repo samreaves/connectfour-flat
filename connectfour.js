@@ -431,10 +431,14 @@ function checkForWin(player) {
 }
 
 function checkForFull() {
-    if (gameboard === [[1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1]]) {
-        return true;
+    for (var columns = 0; columns < 7; columns++) {
+        for (var spaces = 0; spaces < 6; spaces++) {
+            if (gameboard[columns][spaces] === 0) {
+                return false;
+            }
+        }
     }
-    return false;
+    return true;
 }
 
 function addPiece(token, player, currentColumn) {
