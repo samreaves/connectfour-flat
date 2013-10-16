@@ -142,7 +142,6 @@ h1 {
     -moz-border-radius: 50%;
     position: absolute;
     z-index: 99;
-    cursor: pointer;
     left: 18px;   
 }
 

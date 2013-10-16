@@ -45,15 +45,14 @@ var gamecount = 1;
 
 
 function checkForHorizontalWin(player) {
-    var consecutiveTokens = 0;
     for (var spaces = 0; spaces < 6; spaces++) {
+        var consecutiveTokens = 0;
         for (var columns = 0; columns < 7; columns++) {
             if (gameboard[columns][spaces] === player) {
                 consecutiveTokens++;
                 if (consecutiveTokens === 4) {
                     return true;
                 }
-
             } else {
                 consecutiveTokens = 0;
             }
@@ -63,15 +62,14 @@ function checkForHorizontalWin(player) {
 }
 
 function checkForVerticalWin(player) {
-    var consecutiveTokens = 0;
     for (var columns = 0; columns < 7; columns++) {
+        var consecutiveTokens = 0;
         for (var spaces = 0; spaces < 6; spaces++) {
             if (gameboard[columns][spaces] === player) {
                 consecutiveTokens++;
                 if (consecutiveTokens === 4) {
                     return true;
                 }
-
             } else {
                 consecutiveTokens = 0;
             }
